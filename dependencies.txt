@@ -1,0 +1,12 @@
+dnspython
+requests_async
+aiohttp
+async-timeout
+attr
+attrs
+chardet
+idna
+multidict
+pymongo
+urllib3
+yarl
