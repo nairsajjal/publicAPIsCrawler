@@ -21,6 +21,7 @@ async def main(delay_rate, server_upper_limit):
     resultDataSet = {"database":resultDataSet}
     with open('./data.json', 'w') as json_file:
         json_file.write(json.dumps(resultDataSet))
+        print("The entire data has been stored into the data.json file")
     
     time.sleep(0.1)
 
