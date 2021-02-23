@@ -18,6 +18,13 @@
 2. Execute `sudo dockerd`
 3. Execute `docker-compose up`.
 
+## Steps to run the project in Windows(Docker is not working):
+1. Install python and requirements.txt
+
+2. Install postgresql compatible with python version.
+
+3. Change the crawler.py engine=create_engine('postgresql://user:pass@localhost',echo=True)
+
 ## Details of all the tables and their schema
 
 Database used - PostgreSQL
