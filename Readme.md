@@ -18,7 +18,7 @@
 2. Execute `sudo dockerd`
 3. Execute `docker-compose up`.
 
-## Steps to run the project in Windows(Docker is not working):
+## Steps to run the project in Windows(If Docker is not working):
 1. Install python and requirements.txt
 
 2. Install postgresql compatible with python version.
