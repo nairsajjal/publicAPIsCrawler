@@ -14,7 +14,7 @@
 
 ## Steps to run the project
 ### Requirements - Git, Docker on the local system
-1. Run command `git clone https://github.com/nairsajjal/publicAPIsCrawlertest.git`
+1. Run command `git clone https://github.com/nairsajjal/publicAPIsCrawler.git`
 2. Execute `sudo dockerd`
 3. Parllely execute `sudo docker build -t <image_name> .` 
 4. Execute `sudo docker run <image_name>`
