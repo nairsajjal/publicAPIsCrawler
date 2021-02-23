@@ -16,8 +16,7 @@
 ### Requirements - Git, Docker on the local system
 1. Run command `git clone https://github.com/nairsajjal/publicAPIsCrawlertest.git`
 2. Execute `sudo dockerd`
-3. Parllely execute `sudo docker build -t <image_name> .` 
-4. Execute `sudo docker run <image_name>`
+3. Execute `docker-compose up`.
 
 ## Details of all the tables and their schema
 
