@@ -14,25 +14,36 @@
 
 ## Steps to run the project
 ### Requirements - Git, Docker on the local system
-1. Run command `git clone https://github.com/nairsajjal/publicAPIsCrawler.git`
+1. Run command `git clone https://github.com/nairsajjal/publicAPIsCrawlertest.git`
 2. Execute `sudo dockerd`
 3. Parllely execute `sudo docker build -t <image_name> .` 
 4. Execute `sudo docker run <image_name>`
 
 ## Details of all the tables and their schema
 
-Database used - MongoDB
-database (object) contains key value pairs of key(string) which stores the name of the category, and a value(array of objects) which stores the list of apis which are JSON objects.
+Database used - PostgreSQL
+
 Schema- 
-```json
-        {
-            database(type: object): {
-                "apiCategoryName"(type: object) : [
-                    {result}(type: object)
-                    ] (type: Array)
-            }
-        }
-```
+| Column      | Description |
+| ---         | ---         |
+| API         | TEXT        |
+| Description | TEXT        |
+| Auth        | TEXT        |
+| HTTPS       | BOOLEAN     |
+| Cors        | TEXT        |
+| Link        | TEXT        |
+| Category    | TEXT        |
+
+Code to recreate the tables:
+    CREATE TABLE sudhan_postmanapi (
+	"API" TEXT, 
+	"Description" TEXT, 
+	"Auth" TEXT, 
+	"HTTPS" BOOLEAN, 
+	"Cors" TEXT, 
+	"Link" TEXT, 
+	"Category" TEXT
+    )
 
 
 ## Points to achieve (That I have achieved)
@@ -46,3 +57,5 @@ Schema-
 ## Things that could have been improved(if I had more days)
 
 -  A frontend View in ReactJS to visualize the database, and then deploy this entire project on Heroku, this would provide a better user experience and the steps required to run this project will be reduced to only one step that is calling the address in a browser.
+
+-  Add checkpoints in dockerfile to save the state of the container and reload from the last checkpoint if any error occurs.

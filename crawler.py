@@ -2,6 +2,12 @@ import asyncio
 import fetcher
 import time
 import json
+import pandas as pd
+from sqlalchemy import create_engine
+
+# This statement creats an engine for postgres to store the data
+
+engine = create_engine('postgresql://user:pass@db',echo=True)
 
 # An object to store the entire data
 resultDataSet = {}
@@ -23,7 +29,11 @@ async def main(delay_rate, server_upper_limit):
         json_file.write(json.dumps(resultDataSet))
         print("The entire data has been stored into the data.json file")
     
+    
     time.sleep(0.1)
 
 
 resultDataSet = asyncio.get_event_loop().run_until_complete(main(DELAY_RATE,SERVER_UPPER_LIMIT))
+pd.DataFrame(resultDataSet).to_sql('publicApisCrawler', con=engine, index=False)
+print(pd.DataFrame(engine.execute("select * from publicApisCrawler").fetchall(),
+                  columns=['API','Description','Auth','HTTPS','Cors','Link','Category']).to_string())
