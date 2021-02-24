@@ -3,6 +3,7 @@ services:
   try:
         build: ./
         command: python crawler.py
+        command: sh bashScript.sh
   db:
     image: "postgres:11"
     container_name: "publicApisCrawler"
